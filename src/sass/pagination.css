@@ -1,6 +1,7 @@
+@import url(root.css);
 /* General body styling */
 body {
-  font-family: Arial, sans-serif;
+  font-family: var(--default-font);
   margin: 0;
   padding: 0;
   display: flex;
@@ -24,9 +25,9 @@ body {
 
 /* Pagination links (page numbers) */
 .page-button {
-  color: #000000;
+  color: var(--dark-theme-color);
   background-color: #f7f7f7; /* Background color */
-  border: 1px solid #b92f2c; /* Border color */
+  border: 1px solid var(--current-page-color); /* Border color */
   border-radius: 8px;
   padding: 10px 20px;
   margin: 5px;
@@ -36,13 +37,13 @@ body {
 }
 
 .page-button:hover {
-  background-color: #b92f2c;
-  color: #fff; /* Text color on hover */
+  background-color: var(--current-page-color);
+  color: var(--light-theme-color); /* Text color on hover */
 }
 
 .page-button.active {
-  background-color: #b92f2c;
-  color: #fff; /* Text color for active button */
+  background-color: var(--current-page-color);
+  color: var(--light-theme-color); /* Text color for active button */
 }
 
 /* Arrow styling */
@@ -51,8 +52,8 @@ body {
   padding: 10px 20px; /* Increase padding to make arrows bigger */
   margin: 0 10px;
   cursor: pointer;
-  color: #000000;
-  background-color: #f7f7f7;
+  color: var(--dark-theme-color);
+  background-color: var(--light-theme-color);
   border-radius: 8px;
   font-size: 20px; /* Larger font size for arrows */
   font-weight: bold;
@@ -60,16 +61,16 @@ body {
 }
 
 .arrow:hover {
-  color: #fff; /* Text color on hover */
-  background-color: #b92f2c;
+  color: var(--light-theme-color); /* Text color on hover */
+  background-color: var(--current-page-color);
 }
 
 /* Content area styling */
 .content {
   padding: 20px;
-  background-color: #fff;
+  background-color: var(--light-theme-color);
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px var(--dark-theme-color);
   width: 100%;
   max-width: 1200px;
   flex: 1;

@@ -1,0 +1,17 @@
+/* style.css */
+
+.scrollbutton {
+  position: fixed;
+  bottom: 30px;
+  right: 2%;
+  background-color: white;
+  padding: 10px;
+  border-radius: 50px;
+  text-decoration: none;
+}
+
+.scrollbutton:hover {
+  background-color: white;
+  font-size: 20px;
+  padding: 20px;
+}
