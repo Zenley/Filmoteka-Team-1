@@ -2,29 +2,37 @@ document.addEventListener('DOMContentLoaded', function () {
   const contentDiv = document.getElementById('content');
   const paginationDiv = document.getElementById('pagination');
 
-  const itemsPerPage = 1; // Number of items per page
-  const totalItems = 300; // Total number of items
-  const totalPages = Math.ceil(totalItems / itemsPerPage); // Total number of pages
+  const itemsPerPage = 1; 
+  const totalItems = 300; 
+  const totalPages = Math.ceil(totalItems / itemsPerPage); 
   let currentPage = 1;
 
   function generateContent(page) {
     contentDiv.innerHTML = '';
-    if (page > 1) {
-      contentDiv.style.display = 'block'; // Show content if not on the first page
-      // Calculate the start and end index for the current page
-      const startIndex = (page - 1) * itemsPerPage + 1;
-      const endIndex = Math.min(page * itemsPerPage, totalItems);
+    const startIndex = (page - 1) * itemsPerPage + 1;
+    const endIndex = Math.min(page * itemsPerPage, totalItems);
 
-      for (let i = startIndex; i <= endIndex; i++) {
-        contentDiv.innerHTML += `<p>Item ${i}: This is some content for item ${i}.</p>`;
-      }
-    } else {
-      contentDiv.style.display = 'none'; // Hide content on the first page
+    for (let i = startIndex; i <= endIndex; i++) {
+      contentDiv.innerHTML += `<p>Item ${i}: This is some content for item ${i}.</p>`;
     }
   }
 
   function generatePagination() {
     paginationDiv.innerHTML = '';
+
+    const firstArrow = document.createElement('span');
+    firstArrow.className = 'arrow';
+    firstArrow.textContent = '«';
+    firstArrow.addEventListener('click', function () {
+      if (currentPage > 1) {
+        currentPage = 1;
+        updatePagination();
+      }
+    });
+    if (currentPage === 1) {
+      firstArrow.classList.add('disabled');
+    }
+    paginationDiv.appendChild(firstArrow);
 
     const prevArrow = document.createElement('span');
     prevArrow.className = 'arrow';
@@ -40,12 +48,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     paginationDiv.appendChild(prevArrow);
 
-    // Calculate the page range to show
     const maxButtons = 4; // Number of page buttons to display initially
     let startPage = Math.max(1, currentPage - Math.floor(maxButtons / 2));
     let endPage = Math.min(totalPages, startPage + maxButtons - 1);
 
-    // Adjust startPage if the endPage goes beyond totalPages
     if (endPage - startPage + 1 < maxButtons) {
       startPage = Math.max(1, endPage - maxButtons + 1);
     }
@@ -77,6 +83,21 @@ document.addEventListener('DOMContentLoaded', function () {
       nextArrow.classList.add('disabled');
     }
     paginationDiv.appendChild(nextArrow);
+
+    // Add "last page" double arrow
+    const lastArrow = document.createElement('span');
+    lastArrow.className = 'arrow';
+    lastArrow.textContent = '»';
+    lastArrow.addEventListener('click', function () {
+      if (currentPage < totalPages) {
+        currentPage = totalPages;
+        updatePagination();
+      }
+    });
+    if (currentPage === totalPages) {
+      lastArrow.classList.add('disabled');
+    }
+    paginationDiv.appendChild(lastArrow);
   }
 
   function updatePagination() {
@@ -84,5 +105,5 @@ document.addEventListener('DOMContentLoaded', function () {
     generatePagination();
   }
 
-  updatePagination(); // Initial call to setup content and pagination
+  updatePagination(); 
 });

@@ -1,15 +1,13 @@
 .footer-container {
-  position: absolute;
-  bottom: 1px;
   width: 100%;
   padding: 20px;
-  margin-top: auto;
-  background-color: #f7f7f7;
-  color: #080808;
+  margin-top: 300px;
+  background-color: var(--footer-background-color);
+  color: var(--footer-text);
   text-align: center;
-  font-family: Roboto;
-  font-size: 14px;
-  margin: 0 auto;
+  font-family: var(--default-font);
+  font-size: var(--footer-font-size);
+  
 }
 
 .fa-solid {
@@ -188,4 +186,9 @@
     font-size: 12px;
     line-height: 50%;
   }
+}
+
+.fa-solid {
+color: var(--heart-color);
+padding: 0px 10px;
 }

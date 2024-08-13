@@ -11,5 +11,31 @@
   --movie-genre-size: 20px;
   --movie-genre-color: #b92f2c;
   --footer-text: #545454;
+  --footer-background-color: #f7f7f7;
+  --footer-text-size: 16px;
   --current-page-color: #b92f2c;
+  --heart-color: #b92f2c;
+  --hover: 200ms;
+  --function-time: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  font-family: var(--default-font);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
