@@ -363,7 +363,6 @@ gap: 15px;
   gap: 15px;
   margin-top: 25px;
   flex-wrap: wrap;
-  /* Asigură că butoanele se aliniază pe linii diferite la nevoie */
 }
 
 .watched-btn,
@@ -376,9 +375,7 @@ gap: 15px;
   font-weight: 700;
   font-size: var(--button-size);
   width: 100%;
-  /* Se asigură că butonul ocupă întreaga lățime în containere mici */
   flex: 1;
-  /* Butoanele vor avea dimensiuni egale */
   text-align: center;
   transition: background-color 0.5s ease-in-out;
 }
@@ -386,13 +383,13 @@ gap: 15px;
 @media (min-width: 1024px) and (max-width: 1279px) {
   .watch-and-queue {
     justify-content: space-between;
-    /* Butoanele se vor alinia corect pe această dimensiune */
+
   }
 
   .watched-btn,
   .queue-btn {
     width: auto;
-    /* Revine la dimensiunea normală la aceste rezoluții */
+    
     flex: none;
   }
 }
@@ -400,7 +397,6 @@ gap: 15px;
 @media (min-width: 768px) and (max-width: 1023px) {
   .watch-and-queue {
     flex-direction: column;
-    /* Butoanele sunt afișate pe verticală */
     gap: 20px;
   }
 
