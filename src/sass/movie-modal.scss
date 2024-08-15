@@ -115,3 +115,59 @@
   color: #ff0000;
   text-align: center;
 }
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .modal-body {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .modal-left {
+    margin-bottom: 20px;
+  }
+
+  .modal-right {
+    padding-left: 0;
+  }
+
+  .movie-title {
+    font-size: 24px;
+  }
+
+  .movie-genres,
+  .movie-original-title,
+  .movie-release-date,
+  .movie-vote-average {
+    font-size: 14px;
+  }
+
+  .modal-buttons {
+    gap: 10px;
+  }
+}
+
+/* Media Queries for Screens 500px and Below */
+@media (max-width: 500px) {
+  .movie-title {
+    font-size: 20px;
+  }
+
+  .modal-content {
+    width: 100%;
+  }
+
+  .modal-right {
+    padding-left: 0;
+  }
+
+  .modal-button {
+    padding: 8px 12px;
+  }
+
+  .movie-genres,
+  .movie-original-title,
+  .movie-release-date,
+  .movie-vote-average {
+    font-size: 12px;
+  }
+}
