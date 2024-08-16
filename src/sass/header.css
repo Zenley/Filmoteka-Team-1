@@ -143,10 +143,10 @@ a {
 }
 
 .watch-and-queue {
-  gap: 25px;
+  gap: 15px;
   position: absolute;
   right: 5%;
-  top: 20px;
+  top: 8px;
   display: flex;
 }
 
@@ -299,14 +299,14 @@ a {
 
 @media (min-width: 1280px) {
   .watch-and-queue {
-    display: flex;
+    /* display: flex;
     gap: 15px;
     justify-content: flex-end;
     margin-top: 25px;
     position: relative;
     top: 90%;
     left: -100%;
-    transform: translateX(-95%);
+    transform: translateX(-95%); */
   }
 }
 
