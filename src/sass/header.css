@@ -370,8 +370,9 @@ a {
 
   .watch-and-queue {
     display: flex;
-    justify-content: flex-start;
-    margin-top: 50px;
+    position: relative;
+    margin-top: 30px;
+    left: 1%;
     gap: 15px;
   }
 
